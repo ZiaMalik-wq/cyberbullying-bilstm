@@ -1,0 +1,93 @@
+{
+  "filename": "cyberbullying_tweets.csv",
+  "size_bytes": 7174545,
+  "encoding": "utf-8",
+  "format": "csv",
+  "n_rows": 47692,
+  "n_cols": 2,
+  "columns": [
+    "tweet_text",
+    "cyberbullying_type"
+  ],
+  "dtypes": {
+    "tweet_text": "str",
+    "cyberbullying_type": "str"
+  },
+  "text_col": "tweet_text",
+  "label_col": "cyberbullying_type",
+  "unique_labels": [
+    "age",
+    "ethnicity",
+    "gender",
+    "not_cyberbullying",
+    "other_cyberbullying",
+    "religion"
+  ],
+  "class_distribution": {
+    "religion": {
+      "count": 7998,
+      "pct": 16.7701
+    },
+    "age": {
+      "count": 7992,
+      "pct": 16.7575
+    },
+    "gender": {
+      "count": 7973,
+      "pct": 16.7177
+    },
+    "ethnicity": {
+      "count": 7961,
+      "pct": 16.6925
+    },
+    "not_cyberbullying": {
+      "count": 7945,
+      "pct": 16.659
+    },
+    "other_cyberbullying": {
+      "count": 7823,
+      "pct": 16.4032
+    }
+  },
+  "missing_values": {
+    "tweet_text": 0,
+    "cyberbullying_type": 0
+  },
+  "exact_duplicate_rows": 36,
+  "duplicate_text_rows": 1675,
+  "texts_with_conflicting_labels": 1639,
+  "null_text_values": 0,
+  "empty_whitespace_texts": 0,
+  "char_length_stats": {
+    "min": 1,
+    "max": 5018,
+    "mean": 136.25,
+    "median": 124.0,
+    "std": 85.23,
+    "p25": 78.0,
+    "p75": 180.0,
+    "p90": 269.0,
+    "p95": 277.0,
+    "p99": 284.0
+  },
+  "word_length_stats": {
+    "min": 1,
+    "max": 790,
+    "mean": 23.7,
+    "median": 20.0,
+    "std": 15.43,
+    "p25": 13.0,
+    "p75": 32.0,
+    "p90": 47.0,
+    "p95": 51.0,
+    "p99": 56.0
+  },
+  "social_media_features": {
+    "urls": 4313,
+    "mentions": 18098,
+    "hashtags": 6964,
+    "emojis": 427,
+    "repeated_chars_3plus": 7151
+  },
+  "non_ascii_rows": 9161
+}
