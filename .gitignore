@@ -13,6 +13,7 @@ env/
 
 # Data
 data/raw/
+data/processed/
 data/*.csv
 data/*.zip
 data/*.json

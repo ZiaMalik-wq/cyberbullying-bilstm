@@ -1,0 +1,61 @@
+{
+  "policy": "D",
+  "policy_name": "Policy D",
+  "policy_description": "Remove all rows for tweet_text values appearing with more than one label; then deduplicate remaining tweet_text values to one row each (first occurrence).",
+  "source_file": "cyberbullying_tweets.csv",
+  "output_file": "D:\\Semester7\\ANN\\Lab\\LabProject\\cyberbullying-bilstm\\data\\processed\\cyberbullying_clean.csv",
+  "original_row_count": 47692,
+  "conflicting_text_count": 1639,
+  "conflicting_unique_texts": 1639,
+  "conflicting_rows_removed": 3278,
+  "consistent_duplicate_groups": 36,
+  "redundant_duplicate_rows_removed": 36,
+  "total_rows_removed": 3314,
+  "final_row_count": 44378,
+  "final_unique_text_count": 44378,
+  "final_duplicate_text_count": 0,
+  "final_conflicting_text_count": 0,
+  "pct_retained": 93.0512,
+  "final_class_counts": {
+    "age": 7992,
+    "ethnicity": 7952,
+    "gender": 7772,
+    "not_cyberbullying": 6428,
+    "other_cyberbullying": 6243,
+    "religion": 7991
+  },
+  "final_class_percentages": {
+    "age": 18.0089,
+    "ethnicity": 17.9188,
+    "gender": 17.5132,
+    "not_cyberbullying": 14.4847,
+    "other_cyberbullying": 14.0678,
+    "religion": 18.0067
+  },
+  "final_class_distribution": {
+    "age": {
+      "count": 7992,
+      "pct": 18.0089
+    },
+    "ethnicity": {
+      "count": 7952,
+      "pct": 17.9188
+    },
+    "gender": {
+      "count": 7772,
+      "pct": 17.5132
+    },
+    "not_cyberbullying": {
+      "count": 6428,
+      "pct": 14.4847
+    },
+    "other_cyberbullying": {
+      "count": 6243,
+      "pct": 14.0678
+    },
+    "religion": {
+      "count": 7991,
+      "pct": 18.0067
+    }
+  }
+}

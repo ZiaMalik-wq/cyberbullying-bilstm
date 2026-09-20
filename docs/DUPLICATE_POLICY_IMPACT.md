@@ -130,23 +130,22 @@ Removing the redundant copy loses no label information.
 | Conflicting texts remain | No | No | No | No |
 | Duplicate tweet_text values remain | Yes (36 texts) | No | Yes (36 texts) | No |
 | Data loss from conflicts | Yes | Yes (indirectly) | Yes | Yes |
-| A and C are numerically identical | — | — | ✓ | — |
-| Largest retained dataset | — | — | ✓ | — |
-| Cleanest result (no dups, no conflicts) | — | ✓ (with caveat) | — | ✓ |
+| A and C are numerically identical | Yes | — | Yes | — |
+| Largest retained dataset | — | Yes (46,017) | — | — |
+| Cleanest result (no dups, no conflicts, scientifically justified) | — | No (arbitrary labels) | — | **Yes** |
 
 ---
 
-## 10. Unresolved Decision
+## 10. Selected Policy: Policy D
 
 > [!IMPORTANT]
-> **No policy has been selected.** The choice involves a trade-off between:
+> **Policy D has been formally selected as the data-quality policy.**
 >
-> - **Data volume** (Policy B retains the most rows at 46,017)
-> - **Methodological cleanliness** (Policy D leaves no duplicates or conflicts
->   without any arbitrary label assignment)
-> - **Simplicity** (Policies A/C are the same operation)
+> Although Policy B retains the largest row count (46,017 rows), it relies on an arbitrary first-occurrence label assignment for 1,639 conflicting texts and is **NOT** a scientifically justified conflict-resolution strategy. Its larger retained dataset does not make it preferable.
 >
-> The decision must be made before the train/validation/test split is created.
+> **Policy D** was selected because it is the only approach that completely eliminates duplicate texts and conflicting ground-truth labels without introducing arbitrary label assignments.
+>
+> Detailed specification and implementation details are documented in [docs/DATA_QUALITY_POLICY.md](file:///d:/Semester7/ANN/Lab/LabProject/cyberbullying-bilstm/docs/DATA_QUALITY_POLICY.md).
 
 ---
 
