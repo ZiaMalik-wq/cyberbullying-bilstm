@@ -199,3 +199,18 @@ When reporting progress:
 - identify blockers clearly
 
 Do not pretend to have completed actions that were not performed.
+
+## Git Rules
+
+Never commit changes automatically.
+
+Before creating a commit:
+1. show the files that changed,
+2. summarize the changes,
+3. identify any generated artifacts,
+4. verify that raw data and secrets are not included,
+5. propose a commit message.
+
+The user will decide when to commit.
+
+Do not create or merge branches automatically unless explicitly instructed.
