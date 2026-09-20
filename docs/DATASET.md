@@ -24,7 +24,7 @@ Kaggle URL: <https://www.kaggle.com/datasets/andrewmvd/cyberbullying-classificat
 ## Columns
 
 | # | Column Name           | Dtype | Description        |
-|---|-----------------------|-------|--------------------||
+|---|-----------------------|-------|--------------------|
 | 1 | `tweet_text`          | str   | Raw tweet text     |
 | 2 | `cyberbullying_type`  | str   | Target class label |
 
