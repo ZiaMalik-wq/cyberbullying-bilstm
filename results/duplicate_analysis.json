@@ -1,0 +1,63 @@
+{
+  "total_rows": 47692,
+  "unique_tweet_texts": 46017,
+  "texts_appearing_more_than_once": 1675,
+  "texts_appearing_exactly_once": 44342,
+  "exact_duplicate_rows": {
+    "all_copies": 72,
+    "non_first_copies": 36,
+    "unique_pairs_with_duplicates": 36
+  },
+  "repeated_text_analysis": {
+    "consistent_unique_texts": 36,
+    "consistent_rows": 72,
+    "conflicting_unique_texts": 1639,
+    "conflicting_rows": 3278,
+    "max_labels_per_text": 2
+  },
+  "duplicate_text_frequency_distribution": {
+    "2": 1675
+  },
+  "conflicting_label_combinations": [
+    {
+      "combination": "not_cyberbullying + other_cyberbullying",
+      "unique_texts": 1456,
+      "rows": 2912
+    },
+    {
+      "combination": "gender + other_cyberbullying",
+      "unique_texts": 124,
+      "rows": 248
+    },
+    {
+      "combination": "gender + not_cyberbullying",
+      "unique_texts": 50,
+      "rows": 100
+    },
+    {
+      "combination": "ethnicity + religion",
+      "unique_texts": 4,
+      "rows": 8
+    },
+    {
+      "combination": "ethnicity + not_cyberbullying",
+      "unique_texts": 2,
+      "rows": 4
+    },
+    {
+      "combination": "ethnicity + gender",
+      "unique_texts": 1,
+      "rows": 2
+    },
+    {
+      "combination": "gender + religion",
+      "unique_texts": 1,
+      "rows": 2
+    },
+    {
+      "combination": "not_cyberbullying + religion",
+      "unique_texts": 1,
+      "rows": 2
+    }
+  ]
+}
