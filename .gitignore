@@ -18,6 +18,7 @@ data/*.zip
 data/*.json
 
 # Model artifacts
+temp_auto_push.bat
 *.keras
 *.h5
 *.ckpt
@@ -38,4 +39,5 @@ Thumbs.db
 
 # IDE
 .idea/
-.vscode/
+.gitignore
+branch_structure.json
