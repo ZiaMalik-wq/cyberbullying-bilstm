@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/*.csv
+data/*.zip
+data/*.json
+
+# Model artifacts
+*.keras
+*.h5
+*.ckpt
+results/models/
+
+# Experiment artifacts
+results/experiment_logs/
+
+# TensorBoard
+logs/
+
+# Environment/secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
