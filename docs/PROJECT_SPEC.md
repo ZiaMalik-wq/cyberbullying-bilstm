@@ -55,24 +55,32 @@ alternative recurrent neural architectures?
 
 ## 5. Dataset
 
-The project will use the selected Cyberbullying Classification dataset
-containing social-media text samples belonging to six categories.
+The project uses the Cyberbullying Classification dataset containing social-media
+text samples belonging to six categories.
 
-Before implementation, the actual dataset must be inspected.
+The raw dataset (`data/raw/cyberbullying_tweets.csv`) contains 47,692 rows and
+2 columns: `tweet_text` and `cyberbullying_type`. The raw dataset is strictly
+read-only and must never be modified.
 
-Do NOT assume:
+### Selected Data-Quality Policy: Policy D
 
-- filename
-- column names
-- number of rows
-- class distribution
-- missing-value count
-- duplicate count
-- text format
+Prior to data splitting, text preprocessing, or modeling, quantitative duplicate
+and conflict analyses were conducted (`docs/DUPLICATE_ANALYSIS.md`,
+`docs/DUPLICATE_POLICY_IMPACT.md`). The project formally selected **Policy D**
+as documented in `docs/DATA_QUALITY_POLICY.md`:
 
-These must be verified from the actual dataset.
-
-The raw dataset must never be modified.
+1. **Remove Conflicting Texts**: All 1,639 text groups with contradictory labels
+   (3,278 rows) are completely excluded. Because all conflicts are exact 1-vs-1
+   ties, majority voting is impossible, and arbitrary label assignment (Policy B)
+   is rejected as unscientific.
+2. **Deduplicate Consistent Duplicates**: 36 redundant copies from consistent
+   duplicate groups are removed, leaving exactly one copy per unique text.
+3. **Derived Clean Dataset**: The resulting dataset contains exactly 44,378 rows,
+   44,378 unique `tweet_text` values, 0 duplicates, and 0 conflicting labels.
+   It is saved to `data/processed/cyberbullying_clean.csv`.
+4. **Preservation of Raw Text**: Duplicate detection and cleaning were executed
+   on exact string matches before any NLP preprocessing, text normalization,
+   tokenization, or dataset splitting.
 
 ---
 
