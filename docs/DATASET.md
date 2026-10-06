@@ -247,12 +247,25 @@ been source of oppression to both believers and non believer
 | `not_cyberbullying` category quality | Example rows appear genuinely non-bullying but sometimes contain borderline content (see `other_cyberbullying` examples which appear innocuous) | Medium |
 | Very short texts | Minimum length is 1 character; some very short samples may be uninformative | Low |
 
+## Derived Datasets & Train/Val/Test Splits
+
+Following data cleaning under **Policy D** (`docs/DATA_QUALITY_POLICY.md`) and leakage-safe partitioning (`docs/DATA_SPLIT.md`), the following derived artifacts were produced in `data/processed/`:
+
+| Dataset Artifact | Role | Rows | % of Clean | Text Disjointness |
+| :--- | :--- | :---: | :---: | :---: |
+| `cyberbullying_clean.csv` | Cleaned full dataset (0 dups, 0 conflicts) | 44,378 | 100.00% | Source |
+| `train.csv` | Model parameter training & vocab adaptation | 35,502 | 80.00% | 0 overlap with val/test |
+| `val.csv` | Validation loss monitoring & early stopping | 4,438 | 10.00% | 0 overlap with train/test |
+| `test.csv` | Final evaluation benchmark (untouched) | 4,438 | 10.00% | 0 overlap with train/val |
+
+All splits were generated using stratified sampling (`random_state=42`) prior to any text preprocessing or tokenization.
+
 ## Notes
 
-- All statistics above are verified from the actual file by running
-  `src/inspect_dataset.py` on 2026-09-21.
-- The raw file has **not been modified**.
-- A machine-readable JSON summary is stored in `results/dataset_inspection.json`.
-- The conflicting-label issue (1,639 samples) is the most significant
-  data-quality concern and must be addressed during the preprocessing design
-  phase before any train/val/test split is performed.
+- All raw dataset statistics above are verified from the actual file by running
+  `src/inspect_dataset.py`.
+- The raw file (`data/raw/cyberbullying_tweets.csv`) has **never been modified**.
+- Machine-readable JSON summaries:
+  - `results/dataset_inspection.json`
+  - `results/data_cleaning_report.json`
+  - `results/split_report.json`
