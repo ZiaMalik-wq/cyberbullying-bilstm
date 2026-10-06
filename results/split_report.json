@@ -1,0 +1,120 @@
+{
+  "status": "COMPLETED",
+  "configuration": {
+    "random_seed": 42,
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "stratify": true,
+    "text_column": "tweet_text",
+    "label_column": "cyberbullying_type",
+    "source_dataset": "data/processed/cyberbullying_clean.csv",
+    "train_output": "data/processed/train.csv",
+    "val_output": "data/processed/val.csv",
+    "test_output": "data/processed/test.csv",
+    "report_output": "results/split_report.json"
+  },
+  "source_dataset_rows": 44378,
+  "split_summary": {
+    "train": {
+      "rows": 35502,
+      "percentage": 80.0
+    },
+    "validation": {
+      "rows": 4438,
+      "percentage": 10.0
+    },
+    "test": {
+      "rows": 4438,
+      "percentage": 10.0
+    },
+    "sum_rows": 44378
+  },
+  "leakage_verification": {
+    "is_leakage_free": true,
+    "train_val_overlap_count": 0,
+    "train_test_overlap_count": 0,
+    "val_test_overlap_count": 0
+  },
+  "reproducibility_verified": true,
+  "class_distributions": {
+    "train": {
+      "age": {
+        "count": 6393,
+        "percentage": 18.0074
+      },
+      "ethnicity": {
+        "count": 6362,
+        "percentage": 17.9201
+      },
+      "gender": {
+        "count": 6218,
+        "percentage": 17.5145
+      },
+      "not_cyberbullying": {
+        "count": 5142,
+        "percentage": 14.4837
+      },
+      "other_cyberbullying": {
+        "count": 4994,
+        "percentage": 14.0668
+      },
+      "religion": {
+        "count": 6393,
+        "percentage": 18.0074
+      }
+    },
+    "validation": {
+      "age": {
+        "count": 800,
+        "percentage": 18.0261
+      },
+      "ethnicity": {
+        "count": 795,
+        "percentage": 17.9135
+      },
+      "gender": {
+        "count": 777,
+        "percentage": 17.5079
+      },
+      "not_cyberbullying": {
+        "count": 643,
+        "percentage": 14.4885
+      },
+      "other_cyberbullying": {
+        "count": 624,
+        "percentage": 14.0604
+      },
+      "religion": {
+        "count": 799,
+        "percentage": 18.0036
+      }
+    },
+    "test": {
+      "age": {
+        "count": 799,
+        "percentage": 18.0036
+      },
+      "ethnicity": {
+        "count": 795,
+        "percentage": 17.9135
+      },
+      "gender": {
+        "count": 777,
+        "percentage": 17.5079
+      },
+      "not_cyberbullying": {
+        "count": 643,
+        "percentage": 14.4885
+      },
+      "other_cyberbullying": {
+        "count": 625,
+        "percentage": 14.0829
+      },
+      "religion": {
+        "count": 799,
+        "percentage": 18.0036
+      }
+    }
+  }
+}
