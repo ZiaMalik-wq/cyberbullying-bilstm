@@ -188,15 +188,19 @@ carefully rather than automatically removed.
 
 ## 10. Data Splitting
 
-The dataset should be divided into:
+Following Policy D data cleaning (`docs/DATA_QUALITY_POLICY.md`), the 44,378
+cleaned samples are divided into three strictly disjoint partitions using a
+stratified split with fixed random seed (`seed = 42`):
 
-- Training set
-- Validation set
-- Test set
+- **Training set**: 35,502 rows (80.00%) — saved to `data/processed/train.csv`
+- **Validation set**: 4,438 rows (10.00%) — saved to `data/processed/val.csv`
+- **Test set**: 4,438 rows (10.00%) — saved to `data/processed/test.csv`
 
-A stratified split should be used when appropriate.
+The splitting is executed prior to any text tokenization or vocabulary fitting.
+All three sets preserve all six classes in equal proportion. Programmatic
+verification confirmed zero sample overlap between any partitions (`docs/DATA_SPLIT.md`).
 
-The test set must remain untouched until final evaluation.
+The test set remains completely untouched until final evaluation.
 
 No test-set information may influence:
 

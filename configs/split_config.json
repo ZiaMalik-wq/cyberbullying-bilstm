@@ -1,0 +1,14 @@
+{
+  "random_seed": 42,
+  "train_ratio": 0.80,
+  "val_ratio": 0.10,
+  "test_ratio": 0.10,
+  "stratify": true,
+  "text_column": "tweet_text",
+  "label_column": "cyberbullying_type",
+  "source_dataset": "data/processed/cyberbullying_clean.csv",
+  "train_output": "data/processed/train.csv",
+  "val_output": "data/processed/val.csv",
+  "test_output": "data/processed/test.csv",
+  "report_output": "results/split_report.json"
+}
