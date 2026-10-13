@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -18,8 +18,8 @@ data/*.zip
 data/*.json
 
 # Model artifacts
-temp_auto_push.bat
 *.keras
+temp_auto_push.bat
 *.h5
 *.ckpt
 results/models/
@@ -40,4 +40,5 @@ Thumbs.db
 # IDE
 .idea/
 .gitignore
+
 branch_structure.json
