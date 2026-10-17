@@ -145,6 +145,9 @@ def tokenize_and_pad(
         Padded integer token array of shape (N, maxlen).
     """
     seqs = tokenizer.texts_to_sequences(texts.astype(str))
+    # Safeguard: map any empty sequence (e.g. pure punctuation like ':-)') to OOV token
+    oov_idx = tokenizer.word_index.get("<OOV>", 1)
+    seqs = [s if len(s) > 0 else [oov_idx] for s in seqs]
     padded = pad_sequences(
         seqs,
         maxlen=maxlen,
@@ -265,7 +268,7 @@ def build_basic_lstm(
         Embedding(
             input_dim=vocab_size,
             output_dim=embedding_dim,
-            mask_zero=True,
+            mask_zero=False,
         ),
         Dropout(dropout),
         LSTM(lstm_units, dropout=dropout, recurrent_dropout=recurrent_dropout),
@@ -303,7 +306,7 @@ def build_improved_lstm(
         Embedding(
             input_dim=vocab_size,
             output_dim=embedding_dim,
-            mask_zero=True,
+            mask_zero=False,
         ),
         Dropout(dropout_rate),
         LSTM(lstm_units_1, return_sequences=True, dropout=dropout_rate),
